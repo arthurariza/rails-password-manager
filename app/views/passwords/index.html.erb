@@ -1,5 +1,7 @@
-<h1>Passwords</h1>
+<div class="flex justify-between items-center mb-4">
+  <h1 class="mb-0">Passwords</h1>
+  <%= link_to 'New Password' , new_password_path %>
+</div>
 
-<%= link_to 'New Password' , new_password_path %>
 
 <%= render @passwords %>
