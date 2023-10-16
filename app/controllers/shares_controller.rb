@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SharesController < ApplicationController
   before_action :set_password
 
