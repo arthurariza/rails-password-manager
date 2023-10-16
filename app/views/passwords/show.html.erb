@@ -22,3 +22,20 @@
 
 <%= link_to 'Edit' , edit_password_path(@password) %>
 <%= link_to 'Delete' , password_path(@password), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
+<h1 class="mt-4">Shares</h1>
+<%= link_to 'New Share', new_password_share_path(@password) %>
+
+<div>
+  <% @shares.each do |share| %>
+    <div class="flex items-center justify-between my-2">
+      <div class="flex-grow">
+        <%= share.email %>
+      </div>
+
+      <div>
+        <%= link_to 'Delete', password_share_path(@password, share), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
+    </div>
+  <% end %>
+</div>

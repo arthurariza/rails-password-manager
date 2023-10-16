@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   authenticate :user do
     root 'passwords#index'
 
-    resources :passwords
+    resources :passwords do
+      resources :shares, only: %i[new create destroy]
+    end
   end
 
   get 'up' => 'rails/health#show', as: :rails_health_check

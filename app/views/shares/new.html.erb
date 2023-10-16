@@ -1,0 +1,7 @@
+<h1>Share Password</h1>
+
+<%= form_with model: @password, url: password_shares_path(@password), method: :post do |form| %>
+  <%= form.collection_check_boxes :user_ids, @users, :id, :email %>
+
+  <%= form.submit 'Share', class: 'block mt-4' %>
+<% end %>
